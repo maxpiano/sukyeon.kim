@@ -14,34 +14,119 @@ html {
 }
 
 .wrapper {
-  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 70rem;
+  margin: auto;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  height: 4rem;
+  width: inherit;
+  max-width: inherit;
+  background: white;
+}
+
+.logo {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.navigation {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: inherit;
+  list-style-type: none;
+  /* display: none; */
+}
+
+.navigation > li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  border-right: 2px solid black;
+}
+
+.navigation > li:hover {
+  color: white;
+  background: black;
+  cursor: pointer;
+}
+
+.mobile-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  list-style-type: none;
+  height: 4rem;
+  border-top: 2px solid black;
+  width: inherit;
+  max-width: inherit;
+  background: white;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.mobile-navigation > li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  border-right: 2px solid black;
+}
+
+.mobile-navigation > li:last-child {
+  border: none;
+}
+
+.mobile-navigation > li:hover {
+  color: white;
+  background: black;
+  cursor: pointer;
+}
+
+.content {
+  width: inherit;
+  margin-top: 4rem;
+  /* min-height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-header {
-  border-bottom: 2px solid black;
-  height: 4rem;
-  width: 100%;
+.content > div {
+  width: inherit;
+  min-height: calc(100vh - 8rem);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.content {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 2px solid black;
 }
 
 footer {
-  border-top: 2px solid black;
+  width: inherit;
   height: 4rem;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
