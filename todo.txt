@@ -1,0 +1,11 @@
+* first view stays in background when scrolled
+* button touch/click scroll-actions
+* info
+  * zitate
+* musik
+  * music files
+  * CD
+* kontakt
+  * contact form
+  * footer
+    * impressum

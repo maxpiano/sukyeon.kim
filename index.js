@@ -1,24 +1,14 @@
-const buttons = document.querySelectorAll(".navigation li");
-const mobileButtons = document.querySelectorAll(".mobile-navigation li");
-const slides = document.querySelectorAll(".content div");
-const header = document.querySelector("header");
+const linksToggleButton = document.querySelector(".linkstoggle");
+const linksBar = document.querySelector(".links");
+const infoParagraph = document.querySelector(".info > p");
+var infoText = "";
 
-buttons.forEach((button) =>
-  button.addEventListener("click", function () {
-    window.scrollTo({
-      top: slides[this.dataset.index].offsetTop - header.offsetHeight,
-      left: slides[this.dataset.index].offsetLeft,
-      behavior: "smooth",
-    });
-  })
-);
+fetch("/assets/texts/short.txt")
+  .then((response) => response.text())
+  .then((data) => {
+    infoParagraph.textContent = data;
+  });
 
-mobileButtons.forEach((button) =>
-  button.addEventListener("click", function () {
-    window.scrollTo({
-      top: slides[this.dataset.index].offsetTop - header.offsetHeight,
-      left: slides[this.dataset.index].offsetLeft,
-      behavior: "smooth",
-    });
-  })
-);
+linksToggleButton.addEventListener("click", function toggleLinks() {
+  linksBar.classList.toggle("active");
+});
