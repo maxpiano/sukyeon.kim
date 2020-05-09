@@ -1,49 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
+    <title>Sukyeon Kim | Piano</title>
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
   </head>
   <body>
     <div class="wrapper">
+      <!-- {{{navigation -->
       <ul class="navigation">
+        <li class="navtitle">Sukyeon Kim | Piano</i></li>
         <li class="playmusic"><i class="fas fa-volume-down"></i></li>
-        <li>Info</li>
-        <li>Musik</li>
-        <li>Kontakt</li>
-        <li class="linkstoggle"><i class="fas fa-ellipsis-v"></i></li>
+        <li class="navbutton" data-index="1">Info</li>
+        <li class="navbutton" data-index="2">Musik</li>
+        <li class="navbutton" data-index="3">Kontakt</li>
+        <!-- <li class="linkstoggle"><i class="fas fa-ellipsis-v"></i></li> -->
+        <li class="linkstoggle"><i class="fas fa-link"></i></i></li>
       </ul>
       <ul class="links">
-        <li><i class="fab fa-facebook"></i></li>
+        <li><a href="https://www.youtube.com/channel/UCUlYXLoBLHjvjoqxgo0zIIA" target="_blank"><i class="fab fa-youtube"></i></a></li>
         <li><i class="fab fa-spotify"></i></li>
-        <li><i class="fab fa-youtube"></i></li>
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-twitter-square"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
       </ul>
+      <!-- }}} -->
+
+      <!-- {{{ landingpage -->
       <div class="content first">
         <h1>Sukyeon Kim | Piano</h1>
       </div>
+      <!-- }}} -->
+
+      <!-- {{{ info -->
       <div class="content info">
         <h1>Info</h1>
-        <p></p>
+        <p>
+          Sukyeon Kim ist eine klassische Konzertpianistin aus Südkorea. Sie ist
+          Preisträgerin zahlreicher internationaler Wettbewerbe und
+          Förderstipendiatin der Landeshauptstadt Düsseldorf. Sukyeon tritt
+          deutschlandweit als Solistin und Kammermusikerin auf und unterrichtet
+          an der Robert-Schumann-Hochschule Düsseldorf. Ihre
+          <a
+            href="https://www.amazon.de/Nikolai-Kapustin-Piano-Works-Sukyeon/dp/B01JT60HL2/ref=sr_1_fkmr0_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=kapustin+sukyon+kim&qid=1589037336&sr=8-1-fkmr0"
+            target="_blank"
+            >CD</a
+          >
+          mit Klaviermusik von Nikolai Kapustin erschien bei Brilliant Classics.
+        </p>
       </div>
+      <!-- }}} -->
+
+      <!-- {{{ musik -->
       <div class="content musik">
         <h1>Musik</h1>
-        <p>coming soon</p>
+        <div class="playerwrapper">
+          <div class="player">
+            <div class="title">
+              <span> R. Schumann </span><br />
+              Fantasiestücke Op. 12 No. 3 "Warum?"
+            </div>
+            <audio  src="assets/music/test.mp3"></audio>
+            <radial-player stroke="6" radius="70" progress="0"></radial-player>
+          </div>
+          <div class="player">
+            <div class="title">
+              <span>J. S. Bach </span><br />
+              Fuge Es-Dur, BWV 876
+            </div>
+            <audio src="assets/music/test2.mp3"></audio>
+            <radial-player stroke="6" radius="70" progress="0"></radial-player>
+          </div>
+          <div class="player">
+            <div class="title">
+              <span>L. v. Beethoven </span><br />
+              Sonate Nr. 18, IV. Presto con fuoco
+            </div>
+            <audio src="assets/music/test2.mp3"></audio>
+            <radial-player stroke="6" radius="70" progress="0"></radial-player>
+          </div>
+          <div class="player">
+            <div class="title">
+              <span>F. Chopin/L. Godowsky </span><br />
+              Etüde Op. 25 No. 1
+            </div>
+            <audio src="assets/music/test2.mp3"></audio>
+            <radial-player stroke="6" radius="70" progress="0"></radial-player>
+          </div>
+          <div class="player">
+            <div class="title">
+              <span>N. Kapustin </span><br />
+              Etüde Op. 40 No. 7 "Intermezzo"
+            </div>
+            <audio src="assets/music/test2.mp3"></audio>
+            <radial-player stroke="6" radius="70" progress="0"></radial-player>
+          </div>
+          <div class="player">
+            <div class="title">
+              <span>N. Kapustin </span><br />
+              Etüde Op. 40 No. 8 "Finale"
+            </div>
+            <audio src="assets/music/test2.mp3"></audio>
+            <radial-player stroke="6" radius="70" progress="0"></radial-player>
+          </div>
+        </div>
       </div>
+      <!-- }}} -->
+
+      <!-- {{{ kontakt -->
       <div class="content kontakt">
         <h1>Kontakt</h1>
-        <p>coming soon</p>
+        <form action="" method="post">
+          <ul>
+            <li>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="user_name" required />
+            </li>
+            <li>
+              <label for="mail">E-Mail:</label>
+              <input type="email" id="mail" name="user_email" required />
+            </li>
+            <li>
+              <label for="msg">Nachricht:</label>
+              <textarea id="msg" name="user_message" required></textarea>
+            </li>
+            <li class="button">
+              <button type="submit">senden</button>
+            </li>
+          </ul>
+        </form>
+        <footer>
+          <span
+            >2020 © Sukyeon Kim •
+            <a href="impressum.txt" target="_blank">Impressum</a>
+          </span>
+        </footer>
       </div>
+      <!-- }}} -->
     </div>
-    <script src="index.js"></script>
+    <script src="radialplayer.js" charset="utf-8"></script>
+    <script src="script.js"></script>
   </body>
 </html>

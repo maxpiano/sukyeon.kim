@@ -1,3 +1,7 @@
+/* {{{ general */
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:wght@300&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
+
 :root {
   /* colors */
   --light: #e6e3ea;
@@ -19,18 +23,33 @@ html {
   border: 0;
 }
 
-.wrapper {
-  padding-bottom: 3.5rem;
+body {
+  background: #2d2d2d;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  /* max-width: 600px; */
+  margin: 0 auto;
+  margin-bottom: 3.5rem;
+  /* box-shadow: 0px -3.5rem 3px 2px white; */
+}
+/* }}} */
 
 /* {{{ navbar */
 .navigation {
+  width: inherit;
+  max-width: inherit;
   display: flex;
   align-items: center;
   justify-content: space-around;
   position: fixed;
   list-style-type: none;
-  min-width: 100%;
   position: fixed;
   bottom: 0;
   height: 3.5rem;
@@ -38,22 +57,31 @@ html {
   background: var(--dark);
   font-size: 1.2rem;
   font-weight: 600;
-  z-index: 1;
+  z-index: 10;
 }
 
-.navigation > li {
+.navigation li {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 2;
+  flex: 1;
   height: inherit;
-  /* border: 2px dotted white; */
+  transition: all 0.2s ease-out;
 }
 
-.navigation > li:first-child,
-.navigation > li:last-child {
-  flex: 1;
+.navigation li:hover {
+  filter: brightness(0.5);
+  cursor: pointer;
+}
+
+.navigation .playmusic,
+.navigation .linkstoggle {
+  max-width: 3.5rem;
   font-size: 1.5rem;
+}
+
+.navigation .navtitle {
+  display: none;
 }
 /*}}}*/
 
@@ -64,17 +92,16 @@ html {
   width: 3.5rem;
   list-style-type: none;
   position: fixed;
-  right: 0;
   bottom: 0;
   margin-bottom: 3.5rem;
   background: var(--dark);
   color: var(--light);
   font-size: 1.5rem;
-  transform: translateY(100%);
+  transform: translate(0%, 100%);
   transition: all 0.2s ease-out;
 }
 
-.links > li {
+.links li {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,32 +109,32 @@ html {
 }
 
 .links.active {
-  transform: translateY(0);
+  transform: translate(0%, 0%);
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--light);
 }
 /* }}} */
 
 /* {{{ content */
+/* {{{ content general */
 .content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: inherit;
   min-height: calc(100vh - 3.5rem);
   background: var(--light);
   color: var(--dark);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 6vh;
+  padding: 0rem 1rem 0rem 1rem;
 }
 
-.content > h1 {
-  font-size: 5vh;
-}
-
-.content > p {
-  font-family: "Roboto", sans-serif;
-  padding: 9vh 4vh 0vh 4vh;
-  font-size: 1.4rem;
-  text-align: center;
-  flex: 1;
+.content h1 {
+  padding: 3rem 0rem 3rem 0rem;
+  font-size: 2.2rem;
 }
 
 .content:nth-child(even) {
@@ -116,14 +143,215 @@ html {
 }
 
 .content.first {
+  width: inherit;
+  max-width: inherit;
+  position: fixed;
   background: url("/assets/pics/stuhl_1280px.jpg");
   background-size: cover;
   background-position: 50% 15%;
+  z-index: -1;
 }
-.content.info {
+/* }}} */
+
+/* {{{ info */
+.info {
+  margin-top: 100vh;
+  padding-bottom: 3rem;
 }
-.content.musik {
+
+.info p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+  max-width: 600px;
 }
-.content.kontakt {
+
+.info a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--bright);
 }
+
+.info a:hover {
+  color: brown;
+}
+/* }}} */
+
+/* {{{ musik */
+.musik {
+  padding-bottom: 2rem;
+}
+
+.playerwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.player {
+  width: 18rem;
+  height: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  /* padding: 1rem; */
+}
+
+.player .title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.title span {
+  font-weight: bold;
+}
+
+.player radial-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--dark);
+  border: 4px solid var(--dark);
+  transition: all 0.2s ease-out;
+}
+
+.player radial-player:hover {
+  transform: scale(0.96);
+}
+/* }}} */
+
+/* {{{ kontakt */
+.kontakt {
+  justify-content: space-between;
+  padding: 0;
+}
+
+.kontakt form {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1rem 0 1rem;
+}
+
+.kontakt form > ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  list-style: none;
+  width: inherit;
+}
+
+.kontakt form > ul > li {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  margin-bottom: 1rem;
+}
+
+.kontakt form > ul > li > label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.kontakt form > ul > li > input,
+.kontakt form > ul > li > textarea {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  background: var(--light);
+}
+
+.kontakt form > ul > li > input:valid,
+.kontakt form > ul > li > textarea:valid {
+  background: #cee6ce;
+}
+
+.kontakt form > ul > li > textarea {
+  /* height: 20vh; */
+  height: 8rem;
+}
+
+.kontakt form > ul > li > button {
+  font-family: "Poiret One", cursive;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.7rem;
+  margin: 1em auto 0 auto;
+  background: var(--light);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  color: var(--light);
+  height: 3.5rem;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--light);
+}
+/* }}} */
+/* }}} */
+
+/* {{{ media queries */
+/* {{{ smartphone landscape */
+@media (min-width: 481px) {
+  /* and (max-width: 850px) { */
+  .content.first {
+    background-position: 50% 22%;
+  }
+
+  .first h1 {
+    display: none;
+  }
+
+  .navigation {
+    top: 0;
+  }
+
+  .navigation .navbutton {
+    flex: 1;
+  }
+
+  .navigation .navtitle {
+    display: flex;
+    flex: 4;
+    justify-content: flex-start;
+    padding-left: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .navigation .playmusic,
+  .navigation .linkstoggle {
+    max-width: 3.5rem;
+  }
+
+  .wrapper {
+    margin-bottom: 0;
+    margin-top: 3.5rem;
+  }
+
+  .links {
+    top: 0;
+    bottom: auto;
+    margin-top: 3.5rem;
+    margin-bottom: 0;
+    transform: translate(0%, -100%);
+  }
+}
+
+.info {
+}
+/* }}} */
 /* }}} */
