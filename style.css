@@ -190,7 +190,7 @@ body {
 
 /* {{{ musik */
 .musik {
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
 }
 
 .playerwrapper {
@@ -202,12 +202,12 @@ body {
 
 .player {
   width: 18rem;
-  height: 18rem;
+  height: 14rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
-  /* padding: 1rem; */
+  margin-bottom: 3rem;
 }
 
 .player .title {

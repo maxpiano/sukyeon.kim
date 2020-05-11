@@ -1,5 +1,4 @@
-* fill linkbar with real links
-* info
-  * zitate
-* musik
-  * music files
+- fill linkbar with real links
+- quotes below info text
+- complete music files
+- working contact form
