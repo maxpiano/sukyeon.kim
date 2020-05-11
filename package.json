@@ -1,0 +1,23 @@
+{
+  "name": "sukyeon.kim",
+  "version": "1.0.0",
+  "description": "Homepage of Korean Pianist Sukyeon Kim",
+  "main": "radialplayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxpiano/sukyeon.kim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxpiano/sukyeon.kim/issues"
+  },
+  "homepage": "https://github.com/maxpiano/sukyeon.kim#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
+}
